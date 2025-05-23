@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		506EBD592DE0B5A500A2B5A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506EBD422DE0B5A400A2B5A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 506EBD492DE0B5A400A2B5A0;
+			remoteInfo = MensaBar;
+		};
+		506EBD632DE0B5A500A2B5A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506EBD422DE0B5A400A2B5A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 506EBD492DE0B5A400A2B5A0;
+			remoteInfo = MensaBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		506EBD582DE0B5A500A2B5A0 /* MensaBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		506EBD622DE0B5A500A2B5A0 /* MensaBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		506EBD4C2DE0B5A400A2B5A0 /* MensaBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MensaBar;
+			sourceTree = "<group>";
+		};
+		506EBD5B2DE0B5A500A2B5A0 /* MensaBarTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MensaBarTests;
+			sourceTree = "<group>";
+		};
+		506EBD652DE0B5A500A2B5A0 /* MensaBarUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MensaBarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		506EBD472DE0B5A400A2B5A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506EBD552DE0B5A500A2B5A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506EBD5F2DE0B5A500A2B5A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		506EBD412DE0B5A400A2B5A0 = {
+			isa = PBXGroup;
+			children = (
+				506EBD4C2DE0B5A400A2B5A0 /* MensaBar */,
+				506EBD5B2DE0B5A500A2B5A0 /* MensaBarTests */,
+				506EBD652DE0B5A500A2B5A0 /* MensaBarUITests */,
+				506EBD4B2DE0B5A400A2B5A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		506EBD4B2DE0B5A400A2B5A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */,
+				506EBD582DE0B5A500A2B5A0 /* MensaBarTests.xctest */,
+				506EBD622DE0B5A500A2B5A0 /* MensaBarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		506EBD492DE0B5A400A2B5A0 /* MensaBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506EBD6C2DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBar" */;
+			buildPhases = (
+				506EBD462DE0B5A400A2B5A0 /* Sources */,
+				506EBD472DE0B5A400A2B5A0 /* Frameworks */,
+				506EBD482DE0B5A400A2B5A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				506EBD4C2DE0B5A400A2B5A0 /* MensaBar */,
+			);
+			name = MensaBar;
+			packageProductDependencies = (
+			);
+			productName = MensaBar;
+			productReference = 506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		506EBD572DE0B5A500A2B5A0 /* MensaBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506EBD6F2DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarTests" */;
+			buildPhases = (
+				506EBD542DE0B5A500A2B5A0 /* Sources */,
+				506EBD552DE0B5A500A2B5A0 /* Frameworks */,
+				506EBD562DE0B5A500A2B5A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				506EBD5A2DE0B5A500A2B5A0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				506EBD5B2DE0B5A500A2B5A0 /* MensaBarTests */,
+			);
+			name = MensaBarTests;
+			packageProductDependencies = (
+			);
+			productName = MensaBarTests;
+			productReference = 506EBD582DE0B5A500A2B5A0 /* MensaBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		506EBD612DE0B5A500A2B5A0 /* MensaBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506EBD722DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarUITests" */;
+			buildPhases = (
+				506EBD5E2DE0B5A500A2B5A0 /* Sources */,
+				506EBD5F2DE0B5A500A2B5A0 /* Frameworks */,
+				506EBD602DE0B5A500A2B5A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				506EBD642DE0B5A500A2B5A0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				506EBD652DE0B5A500A2B5A0 /* MensaBarUITests */,
+			);
+			name = MensaBarUITests;
+			packageProductDependencies = (
+			);
+			productName = MensaBarUITests;
+			productReference = 506EBD622DE0B5A500A2B5A0 /* MensaBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		506EBD422DE0B5A400A2B5A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					506EBD492DE0B5A400A2B5A0 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					506EBD572DE0B5A500A2B5A0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 506EBD492DE0B5A400A2B5A0;
+					};
+					506EBD612DE0B5A500A2B5A0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 506EBD492DE0B5A400A2B5A0;
+					};
+				};
+			};
+			buildConfigurationList = 506EBD452DE0B5A400A2B5A0 /* Build configuration list for PBXProject "MensaBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 506EBD412DE0B5A400A2B5A0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 506EBD4B2DE0B5A400A2B5A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				506EBD492DE0B5A400A2B5A0 /* MensaBar */,
+				506EBD572DE0B5A500A2B5A0 /* MensaBarTests */,
+				506EBD612DE0B5A500A2B5A0 /* MensaBarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		506EBD482DE0B5A400A2B5A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506EBD562DE0B5A500A2B5A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506EBD602DE0B5A500A2B5A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		506EBD462DE0B5A400A2B5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506EBD542DE0B5A500A2B5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506EBD5E2DE0B5A500A2B5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		506EBD5A2DE0B5A500A2B5A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 506EBD492DE0B5A400A2B5A0 /* MensaBar */;
+			targetProxy = 506EBD592DE0B5A500A2B5A0 /* PBXContainerItemProxy */;
+		};
+		506EBD642DE0B5A500A2B5A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 506EBD492DE0B5A400A2B5A0 /* MensaBar */;
+			targetProxy = 506EBD632DE0B5A500A2B5A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		506EBD6A2DE0B5A500A2B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		506EBD6B2DE0B5A500A2B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		506EBD6D2DE0B5A500A2B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MensaBar/MensaBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		506EBD6E2DE0B5A500A2B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MensaBar/MensaBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		506EBD702DE0B5A500A2B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MensaBar";
+			};
+			name = Debug;
+		};
+		506EBD712DE0B5A500A2B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MensaBar";
+			};
+			name = Release;
+		};
+		506EBD732DE0B5A500A2B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MensaBar;
+			};
+			name = Debug;
+		};
+		506EBD742DE0B5A500A2B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MensaBar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		506EBD452DE0B5A400A2B5A0 /* Build configuration list for PBXProject "MensaBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506EBD6A2DE0B5A500A2B5A0 /* Debug */,
+				506EBD6B2DE0B5A500A2B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506EBD6C2DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506EBD6D2DE0B5A500A2B5A0 /* Debug */,
+				506EBD6E2DE0B5A500A2B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506EBD6F2DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506EBD702DE0B5A500A2B5A0 /* Debug */,
+				506EBD712DE0B5A500A2B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506EBD722DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506EBD732DE0B5A500A2B5A0 /* Debug */,
+				506EBD742DE0B5A500A2B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 506EBD422DE0B5A400A2B5A0 /* Project object */;
+}
