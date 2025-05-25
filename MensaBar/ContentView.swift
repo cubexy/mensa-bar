@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var vm: MenuViewModel
+    
+    init(vm: MenuViewModel) {
+        self._vm = StateObject(wrappedValue: vm)
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        VStack(alignment: .leading) {
+            Text("Speiseplan heute (Mensa am Park)").fontWeight(.bold)
+                .padding(.horizontal)
+                .padding(.top, 10)
+            List(vm.menu, id: \.name) { item in
+                VStack(alignment: .leading) {
+                    Text(item.name).fontWeight(.semibold)
+                    if item.description != nil {
+                        Text(item.description)
+                    }
+                    Text(item.price)
+                }
+            }.task {
+                await vm.populateMenu()
+            }
+        }.frame(width: 300, height: 300)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(vm: MenuViewModel())
 }

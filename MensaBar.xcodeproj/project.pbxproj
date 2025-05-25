@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		506EBD9F2DE35D2100A2B5A0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		506EBD592DE0B5A500A2B5A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,22 @@
 		506EBD622DE0B5A500A2B5A0 /* MensaBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		506EBDAD2DE3B29900A2B5A0 /* Exceptions for "MensaBar" folder in "MensaBar" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 506EBD492DE0B5A400A2B5A0 /* MensaBar */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		506EBD4C2DE0B5A400A2B5A0 /* MensaBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				506EBDAD2DE3B29900A2B5A0 /* Exceptions for "MensaBar" folder in "MensaBar" target */,
+			);
 			path = MensaBar;
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506EBD9F2DE35D2100A2B5A0 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +93,10 @@
 		506EBD412DE0B5A400A2B5A0 = {
 			isa = PBXGroup;
 			children = (
-				506EBD4C2DE0B5A400A2B5A0 /* MensaBar */,
 				506EBD5B2DE0B5A500A2B5A0 /* MensaBarTests */,
 				506EBD652DE0B5A500A2B5A0 /* MensaBarUITests */,
 				506EBD4B2DE0B5A400A2B5A0 /* Products */,
+				506EBD4C2DE0B5A400A2B5A0 /* MensaBar */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +130,7 @@
 			);
 			name = MensaBar;
 			packageProductDependencies = (
+				506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */,
 			);
 			productName = MensaBar;
 			productReference = 506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */;
@@ -195,6 +214,9 @@
 			);
 			mainGroup = 506EBD412DE0B5A400A2B5A0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				506EBD8A2DE0CDCB00A2B5A0 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 506EBD4B2DE0B5A400A2B5A0 /* Products */;
 			projectDirPath = "";
@@ -398,6 +420,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MensaBar/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,6 +447,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MensaBar/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -541,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		506EBD8A2DE0CDCB00A2B5A0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 506EBD8A2DE0CDCB00A2B5A0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 506EBD422DE0B5A400A2B5A0 /* Project object */;
 }
