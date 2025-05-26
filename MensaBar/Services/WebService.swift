@@ -15,10 +15,8 @@ enum RecipeFetchError: Error {
 }
 
 class WebService {
-    let dataUrl: URL! = Constants.Urls.mensaBaseUrl
-
-    func getMensaMeals() async throws -> [MenuItem] {
-        let (data, _) = try await URLSession.shared.data(from: dataUrl)
+    func getMensaMeals(url: URL) async throws -> [MenuItem] {
+        let (data, _) = try await URLSession.shared.data(from: url)
         guard let webData = String(data: data, encoding: .utf8) else {
             throw RecipeFetchError.invalidResponse
         }

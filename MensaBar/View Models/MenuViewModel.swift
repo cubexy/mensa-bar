@@ -13,7 +13,8 @@ class MenuViewModel: ObservableObject {
     
     func populateMenu() async {
         do {
-            let menu = try await WebService().getMensaMeals()
+            let url = MensaUrlService().getMensaUrl(date: nil, options: [.init(variable: "location", option: "106")])
+            let menu = try await WebService().getMensaMeals(url: url)
             self.menu = menu.map { MenuItemViewModel($0) }
         } catch {
             print("Error fetching menu: \(error)")
