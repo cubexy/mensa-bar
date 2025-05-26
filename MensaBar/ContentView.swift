@@ -20,11 +20,11 @@ struct ContentView: View {
             Text("Speiseplan heute (Mensa am Park)").fontWeight(.bold)
                 .padding(.horizontal)
                 .padding(.top, 10)
-            List(vm.menu, id: \.name) { item in
+            List(vm.menu, id: \.id) { item in
                 VStack(alignment: .leading) {
                     Text(item.name).fontWeight(.semibold)
                     if item.description != nil {
-                        Text(item.description)
+                        Text(item.description ?? "")
                     }
                     Text(item.price)
                 }

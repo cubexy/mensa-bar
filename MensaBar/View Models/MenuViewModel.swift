@@ -22,18 +22,21 @@ class MenuViewModel: ObservableObject {
 }
 
 struct MenuItemViewModel {
-    
     private var item: MenuItem
     
     init(_ item: MenuItem) {
         self.item = item
     }
     
+    var id: Int {
+        item.id
+    }
+    
     var name: String {
         item.name
     }
     
-    var description: String! {
+    var description: String? {
         item.description
     }
     
