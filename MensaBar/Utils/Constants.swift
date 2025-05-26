@@ -17,6 +17,11 @@ struct UrlVariable {
     var options: [UrlVariableOption]
 }
 
+struct UrlVariableSelection {
+    var variable: String
+    var option: String
+}
+
 struct Constants {
     struct Urls {
         static let mensaBaseUrl: URL = URL(string: "https://www.studentenwerk-leipzig.de/mensen-cafeterien/speiseplan/")!
