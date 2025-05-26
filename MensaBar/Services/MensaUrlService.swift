@@ -13,8 +13,9 @@ class MensaUrlService {
         let now = Date()
         
         let BASE_URL = Constants.Urls.mensaBaseUrl
+        let DATE_FORMAT = Constants.UrlVariables.dateFormat
+        let NEXT_DAY_TRIGGER_TIME = Variables.Options.nextDayTriggerTime
 
-        // Determine the selected date
         let selectedDate: Date
         if let explicitDate = date {
             selectedDate = explicitDate
@@ -22,35 +23,28 @@ class MensaUrlService {
             let secondsSinceMidnight = calendar.component(.hour, from: now) * 3600 +
                                         calendar.component(.minute, from: now) * 60 +
                                         calendar.component(.second, from: now)
-            if TimeInterval(secondsSinceMidnight) < Variables.Options.nextDayTriggerTime {
-                // Current time is before the date offset, use today's date
+            if TimeInterval(secondsSinceMidnight) < NEXT_DAY_TRIGGER_TIME {
                 selectedDate = now
             } else {
-                // Current time is past the date offset, use the next day's date
                 selectedDate = calendar.date(byAdding: .day, value: 1, to: now) ?? now
             }
         }
 
-        // Format the date for the URL (e.g., YYYY-MM-DD)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = DATE_FORMAT
         let dateString = dateFormatter.string(from: selectedDate)
 
-        // Create URL components to add query parameters
         var urlComponents = URLComponents(url: BASE_URL, resolvingAgainstBaseURL: true)!
-
         var queryItems: [URLQueryItem] = []
 
-        // Add the date as a query parameter
         queryItems.append(URLQueryItem(name: "date", value: dateString))
 
-        // Add options as query parameters
         for option in options ?? [] {
             queryItems.append(URLQueryItem(name: option.variable, value: option.option))
         }
 
         urlComponents.queryItems = queryItems
 
-        return urlComponents.url ?? BASE_URL // Return the constructed URL, or baseUrl as a fallback
+        return urlComponents.url ?? BASE_URL
     }
 }

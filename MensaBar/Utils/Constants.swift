@@ -12,11 +12,6 @@ struct UrlVariableOption {
     var displayName: String
 }
 
-struct UrlVariable {
-    var name: String
-    var options: [UrlVariableOption]
-}
-
 struct UrlVariableSelection {
     var variable: String
     var option: String
@@ -36,17 +31,17 @@ struct Variables {
     struct Options {
         static var nextDayTriggerTime: TimeInterval = 72000 // 20 * 60 * 60 == 20:00
     }
-    static var urlVariables: [UrlVariable] = [
-        .init(name: "location", options: [
-            .init(id: "106", displayName: "Mensa am Park"),
-            .init(id: "111", displayName: "Mensa Peterssteinweg"),
-            .init(id: "115", displayName: "Mensa am Elsterbecken"),
-            .init(id: "118", displayName: "Mensa Academica"),
-            .init(id: "127", displayName: "Mensa am Botanischen Garten"),
-            .init(id: "140", displayName: "Mensa Schönauer Straße"),
-            .init(id: "153", displayName: "Cafeteria Dittrichring"),
-            .init(id: "162", displayName: "Mensa am Medizincampus"),
-            .init(id: "170", displayName: "Mensa An den Tierkliniken")
-        ])
+    static var urlVariables: [String: [UrlVariableOption]] = [
+        "location": [
+            UrlVariableOption(id: "106", displayName: "Mensa am Park"),
+            UrlVariableOption(id: "111", displayName: "Mensa Peterssteinweg"),
+            UrlVariableOption(id: "115", displayName: "Mensa am Elsterbecken"),
+            UrlVariableOption(id: "118", displayName: "Mensa Academica"),
+            UrlVariableOption(id: "127", displayName: "Mensa am Botanischen Garten"),
+            UrlVariableOption(id: "140", displayName: "Mensa Schönauer Straße"),
+            UrlVariableOption(id: "153", displayName: "Cafeteria Dittrichring"),
+            UrlVariableOption(id: "162", displayName: "Mensa am Medizincampus"),
+            UrlVariableOption(id: "170", displayName: "Mensa An den Tierkliniken")
+        ]
     ]
 }
