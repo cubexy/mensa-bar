@@ -15,6 +15,7 @@ class MensaUrlService {
         let BASE_URL = Constants.Urls.mensaBaseUrl
         let DATE_FORMAT = Constants.UrlVariables.dateFormat
         let NEXT_DAY_TRIGGER_TIME = Variables.Options.nextDayTriggerTime
+        let DATE_VARIABLE_NAME = Constants.UrlVariables.dateVariableName
 
         let selectedDate: Date
         if let explicitDate = date {
@@ -37,7 +38,7 @@ class MensaUrlService {
         var urlComponents = URLComponents(url: BASE_URL, resolvingAgainstBaseURL: true)!
         var queryItems: [URLQueryItem] = []
 
-        queryItems.append(URLQueryItem(name: "date", value: dateString))
+        queryItems.append(URLQueryItem(name: DATE_VARIABLE_NAME, value: dateString))
 
         for option in options ?? [] {
             queryItems.append(URLQueryItem(name: option.variable, value: option.option))
