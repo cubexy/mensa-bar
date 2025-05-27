@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct MensaBarApp: App {
-    
+
     var body: some Scene {
         MenuBarExtra(
-                    "Menu Bar Example",
-                    systemImage: "fork.knife"
+            "Menu Bar Example",
+            systemImage: "fork.knife"
         ) {
             ContentView(vm: MenuViewModel())
         }.menuBarExtraStyle(.window)

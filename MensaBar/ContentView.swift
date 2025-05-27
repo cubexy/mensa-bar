@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @StateObject private var vm: MenuViewModel
-    
+
     init(vm: MenuViewModel) {
         self._vm = StateObject(wrappedValue: vm)
     }
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Speiseplan heute (Mensa am Park)").fontWeight(.bold)
