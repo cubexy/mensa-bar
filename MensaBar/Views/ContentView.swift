@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
 
     @StateObject private var vm: MenuViewModel
-    @State private var wakeUp = Date.now
+    @State private var date = Date.now
     @State private var isShowingPopover = false
 
     init(vm: MenuViewModel) {
@@ -31,22 +31,31 @@ struct ContentView: View {
                     .padding(.top, 10)
                 DatePicker(
                     "am",
-                    selection: $wakeUp,
+                    selection: $date,
                     displayedComponents: [.date]
                 ).padding(.horizontal).datePickerStyle(.compact).environment(
                     \.locale,
                     Locale.init(identifier: "de")
-                )
+                ).onChange(of: date) { vm.setDate(date) }
                 if menu == nil {
                     // was not able to load entries
                     Spacer()
-                    ContentNotFoundView(error: error, systemImage: "exclamationmark.triangle.fill", errorTitle: "Fehler beim Laden")
+                    ContentNotFoundView(
+                        error: error,
+                        systemImage: "exclamationmark.triangle.fill",
+                        errorTitle: "Fehler beim Laden"
+                    )
                     Spacer()
-                    
+
                 } else if menu!.menu.isEmpty {
                     // no entries for selected day (weekend, ...)
                     Spacer()
-                    ContentNotFoundView(error: "Für den ausgewählten Tag werden keine Gerichte angeboten.", systemImage: "menucard", errorTitle: "Keine Gerichte")
+                    ContentNotFoundView(
+                        error:
+                            "Für den ausgewählten Tag werden keine Gerichte angeboten.",
+                        systemImage: "menucard",
+                        errorTitle: "Keine Gerichte"
+                    )
                     LastUpdatedView(
                         loading: loading,
                         error: error,
