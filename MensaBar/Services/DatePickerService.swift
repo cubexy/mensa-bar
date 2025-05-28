@@ -15,19 +15,15 @@ class DatePickerService {
         let now = Date()
 
         let selectedDate: Date
-        if let explicitDate = date {
-            selectedDate = explicitDate
+        let secondsSinceMidnight =
+            calendar.component(.hour, from: now) * 3600
+            + calendar.component(.minute, from: now) * 60
+            + calendar.component(.second, from: now)
+        if TimeInterval(secondsSinceMidnight) < NEXT_DAY_TRIGGER_TIME {
+            selectedDate = now
         } else {
-            let secondsSinceMidnight =
-                calendar.component(.hour, from: now) * 3600
-                + calendar.component(.minute, from: now) * 60
-                + calendar.component(.second, from: now)
-            if TimeInterval(secondsSinceMidnight) < NEXT_DAY_TRIGGER_TIME {
-                selectedDate = now
-            } else {
-                selectedDate =
-                    calendar.date(byAdding: .day, value: 1, to: now) ?? now
-            }
+            selectedDate =
+                calendar.date(byAdding: .day, value: 1, to: now) ?? now
         }
 
         return selectedDate

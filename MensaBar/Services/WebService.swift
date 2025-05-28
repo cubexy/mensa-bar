@@ -9,23 +9,33 @@ import Foundation
 import SwiftSoup
 
 enum RecipeFetchError: Error {
+    case noResponse
     case invalidResponse
     case parsingFailed
-    case unexpected(message: String)
 }
 
 class WebService {
     static func getMensaMeals(url: URL) async throws -> [MenuItem] {
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let data: Data
+        do {
+            (data, _) = try await URLSession.shared.data(from: url)
+        } catch {
+            throw RecipeFetchError.noResponse
+        }
+
         guard let webData = String(data: data, encoding: .utf8) else {
             throw RecipeFetchError.invalidResponse
         }
-        let document: Document = try SwiftSoup.parse(webData)
-        let meals = try document.getElementsByClass("type--meal")
-        let parsedMeals = try meals.enumerated().map { (index, meal) in
-            try parseMeal(meal, index)
+        do {
+            let document: Document = try SwiftSoup.parse(webData)
+            let meals = try document.getElementsByClass("type--meal")
+            let parsedMeals = try meals.enumerated().map { (index, meal) in
+                try parseMeal(meal, index)
+            }
+            return parsedMeals
+        } catch {
+            throw RecipeFetchError.parsingFailed
         }
-        return parsedMeals
     }
 
     static private func parseMeal(_ meal: Element, _ index: Int) throws
