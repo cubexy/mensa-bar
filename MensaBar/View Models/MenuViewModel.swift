@@ -12,6 +12,7 @@ class MenuViewModel: ObservableObject {
     @Published var menu: CafeteriaMenuViewModel?
     @Published var loading: Bool = true
     @Published var error: String?
+    var date: Date?
 
     /**
     Initial menu population.
@@ -20,14 +21,15 @@ class MenuViewModel: ObservableObject {
         self.loading = true
         self.error = nil
         do {
-            let date = DatePickerService.getDate()
+            let date = self.date ?? DatePickerService.getDate()
             let url = MensaUrlService.getMensaUrl(
                 date: date,
                 options: [.init(variable: "location", option: "106")]
             )
             let menu = try await WebService.getMensaMeals(url: url)
             let vmItems = menu.map { MenuItemViewModel($0) }
-            self.menu = CafeteriaMenuViewModel(menuItems: vmItems, date: date)
+            self.menu = CafeteriaMenuViewModel(menuItems: vmItems, date: Date())
+            self.date = date
         } catch RecipeFetchError.noResponse {
             self.error = "Fehler beim Erhalten der Daten. Bitte überprüfe deine Internetverbindung."
         } catch RecipeFetchError.invalidResponse {
@@ -41,8 +43,9 @@ class MenuViewModel: ObservableObject {
 
     }
 
-    func setDate(_ date: Date) {
-        return
+    func setDate(_ date: Date) async {
+        self.date = date
+        await self.populateMenu()
     }
 }
 

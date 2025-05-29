@@ -16,11 +16,18 @@ struct LastUpdatedView: View {
 
     var body: some View {
         HStack {
+            Text(
+                "Zuletzt aktualisiert: \(timestamp)"
+            )
+            
+            .foregroundStyle(.tertiary)
+            .transition(.slide)
+            Spacer()
             if loading {
                 ProgressView().scaleEffect(0.5).frame(
                     width: 8.0,
                     height: 8.0
-                )
+                ).transition(.opacity)
             } else if error != nil {
                 Image(systemName: "exclamationmark.triangle")
                     .onHover(perform: { _ in
@@ -33,13 +40,7 @@ struct LastUpdatedView: View {
                         Text(error!).padding(8)
                     }
             }
-            Text(
-                "Zuletzt aktualisiert: \(timestamp)"
-            )
-            .listRowSeparator(.hidden)
-            .foregroundStyle(.tertiary)
-
-        }.padding(.horizontal).animation(
+        }.animation(
             .easeInOut(duration: 0.5),
             value: loading
         ).animation(

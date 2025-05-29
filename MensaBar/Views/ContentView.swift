@@ -36,7 +36,11 @@ struct ContentView: View {
                 ).padding(.horizontal).datePickerStyle(.compact).environment(
                     \.locale,
                     Locale.init(identifier: "de")
-                ).onChange(of: date) { vm.setDate(date) }
+                ).onChange(of: date) {
+                    Task {
+                        await vm.setDate(date)
+                    }
+                }
                 if menu == nil {
                     // was not able to load entries
                     Spacer()
@@ -61,7 +65,7 @@ struct ContentView: View {
                         error: error,
                         isShowingPopover: $isShowingPopover,
                         timestamp: menu!.getTimestamp()
-                    )
+                    ).padding(.horizontal)
                     Spacer()
                 } else {
                     List {
@@ -83,7 +87,7 @@ struct ContentView: View {
                             error: error,
                             isShowingPopover: $isShowingPopover,
                             timestamp: menu!.getTimestamp()
-                        )
+                        ).listRowSeparator(.hidden)
                     }
                 }
             }
