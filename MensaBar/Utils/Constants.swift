@@ -23,6 +23,9 @@ struct Constants {
             string:
                 "https://www.studentenwerk-leipzig.de/mensen-cafeterien/speiseplan/"
         )!
+        static let repositoryBaseUrl: URL = URL(
+            string: "https://github.com/cubexy/mensa-bar/issues/new"
+        )!
     }
     struct UrlVariables {
         static let dateVariableName: String = "date"

@@ -22,7 +22,7 @@ struct ContentNotFoundView: View {
             Text(
                 error
                     ?? "Die Gerichte konnten nicht geladen werden. Bitte versuche es später erneut."
-            )
+            ).foregroundStyle(.primary).colorMultiply(.secondary)
         }
     }
 }

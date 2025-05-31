@@ -47,11 +47,7 @@ struct ContentView: View {
                         Spacer()
                     }.transition(.blurReplace)
                 } else {
-                    ContentNotFoundView(
-                        error: error,
-                        systemImage: "exclamationmark.triangle.fill",
-                        errorTitle: "Fehler beim Laden"
-                    ).transition(.blurReplace)
+                    ContentParsingFailedView(error: error!).transition(.blurReplace)
                 }
                 Spacer()
             } else if menu!.menu.isEmpty {
@@ -65,7 +61,7 @@ struct ContentView: View {
                 ).transition(.blurReplace)
                 LastUpdatedView(
                     loading: loading,
-                    error: error,
+                    error: error?.errorDisplayMessage,
                     isShowingPopover: $isShowingPopover,
                     timestamp: menu!.getTimestamp()
                 ).padding(.horizontal)
@@ -80,15 +76,14 @@ struct ContentView: View {
                                 !description.isEmpty
                             {
                                 Text(description).foregroundStyle(
-                                    .secondary
-                                )
+                                    .secondary)
                             }
                             Text(item.price)
                         }
                     }
                     LastUpdatedView(
                         loading: loading,
-                        error: error,
+                        error: error?.errorDisplayMessage,
                         isShowingPopover: $isShowingPopover,
                         timestamp: menu!.getTimestamp()
                     ).listRowSeparator(.hidden)
@@ -98,7 +93,7 @@ struct ContentView: View {
             await vm.populateMenu()
         }
         .frame(width: 300, height: 300)
-        .animation(.bouncy, value: vm.loading)
+        .animation(.easeInOut, value: vm.loading)
     }
 }
 
