@@ -37,11 +37,8 @@ class WebService {
         }
         let document: Document = try SwiftSoup.parse(webData)
         let meals = try document.getElementsByClass("type--meal")
-        guard meals.size() > 0 else {
-            throw RecipeFetchError.parsingFailed(
-                errorDispatch: ErrorDispatch.noMenuItems,
-                mealData: "no mealData - could not find meals"
-            )
+        if meals.size() == 0 {
+            return []
         }
         let parsedMeals = try meals.enumerated().map { (index, meal) in
             try parseMeal(meal, index)
