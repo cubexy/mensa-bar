@@ -56,55 +56,6 @@ class MenuViewModel: ObservableObject {
     }
 }
 
-struct ErrorViewModel {
-    var errorDate: Date?
-    var errorTitle: String
-    var errorMessage: String
-    var errorDisplayTitle: String
-    var errorDisplayMessage: String
-    
-    init(errorTitle: String, errorMessage: String, errorDisplayTitle: String, errorDisplayMessage: String, errorDate: Date?) {
-        self.errorTitle = errorTitle
-        self.errorDisplayTitle = errorDisplayTitle
-        self.errorMessage = errorMessage
-        self.errorDisplayMessage = errorDisplayMessage
-        self.errorDate = errorDate
-    }
-    
-    private func getIssueTitle() -> String {
-        return "[BUG] error: " + self.errorTitle
-    }
-    
-    private func getIssueBody() -> String {
-        return """
-**Error code**
-\(self.errorMessage)
-
-**Menu date**
-\(self.errorDate != nil ? getTimestampString(date: self.errorDate!, includeTime: false) : "N/A")
-
-**Additional information**
-Add additional information here.
-"""
-    }
-    
-    func getErrorIssueUrl() -> URL {
-        let REPO_URL = Constants.Urls.repositoryBaseUrl
-        
-        var urlComponents = URLComponents(
-            url: REPO_URL,
-            resolvingAgainstBaseURL: true
-        )!
-        let queryItems = [
-            URLQueryItem(name: "title", value: getIssueTitle()),
-            URLQueryItem(name: "body", value: getIssueBody()),
-            URLQueryItem(name: "labels", value: "bug")
-        ]
-        urlComponents.queryItems = queryItems
-        return urlComponents.url ?? REPO_URL
-    }
-}
-
 struct CafeteriaMenuViewModel {
     var menu: [MenuItemViewModel]
     private var date: Date
@@ -116,14 +67,10 @@ struct CafeteriaMenuViewModel {
     }
 
     func getTimestamp() -> String {
-        return getTimestampString(date: self.date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm"
+        return dateFormatter.string(from: self.date)
     }
-}
-
-private func getTimestampString(date: Date, includeTime: Bool = true) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = includeTime ? "dd.MM.yyyy, HH:mm" : "dd.MM.yyyy"
-    return dateFormatter.string(from: date)
 }
 
 struct MenuItemViewModel {
