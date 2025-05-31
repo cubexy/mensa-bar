@@ -45,6 +45,7 @@ class MenuViewModel: ObservableObject {
 
     func setDate(_ date: Date) async {
         self.date = date
+        self.menu = nil
         await self.populateMenu()
     }
 }
