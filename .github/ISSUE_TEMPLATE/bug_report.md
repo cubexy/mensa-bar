@@ -25,9 +25,8 @@ If applicable, add screenshots to help explain your problem.
 
 **Device:**
 
--   OS: [e.g. iOS]
--   Plugin version: [e.g. 1.0.9]
--   Obsidian version: [e.g. latest]
+-   MacOS version: [e.g. 15.5]
+-   App version: [e.g. 1.0.0]
 
 **Additional context**
 Add any other context about the problem here.
