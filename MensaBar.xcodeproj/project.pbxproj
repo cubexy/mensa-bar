@@ -10,27 +10,8 @@
 		506EBD9F2DE35D2100A2B5A0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		506EBD592DE0B5A500A2B5A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 506EBD422DE0B5A400A2B5A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 506EBD492DE0B5A400A2B5A0;
-			remoteInfo = MensaBar;
-		};
-		506EBD632DE0B5A500A2B5A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 506EBD422DE0B5A400A2B5A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 506EBD492DE0B5A400A2B5A0;
-			remoteInfo = MensaBar;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E846AC2DEC5D60001ECD8F /* MensaBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MensaBarTests.xctest; path = /Users/max/Documents/GitHub/MensaBar/build/Debug/MensaBar.app/Contents/PlugIns/MensaBarTests.xctest; sourceTree = "<absolute>"; };
-		50E846AD2DEC5D60001ECD8F /* MensaBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MensaBarUITests.xctest; path = "/Users/max/Documents/GitHub/MensaBar/build/Debug/MensaBarUITests-Runner.app/Contents/PlugIns/MensaBarUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -60,20 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				506EBD9F2DE35D2100A2B5A0 /* SwiftSoup in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		506EBD552DE0B5A500A2B5A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		506EBD5F2DE0B5A500A2B5A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,46 +89,6 @@
 			productReference = 506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		506EBD572DE0B5A500A2B5A0 /* MensaBarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 506EBD6F2DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarTests" */;
-			buildPhases = (
-				506EBD542DE0B5A500A2B5A0 /* Sources */,
-				506EBD552DE0B5A500A2B5A0 /* Frameworks */,
-				506EBD562DE0B5A500A2B5A0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				506EBD5A2DE0B5A500A2B5A0 /* PBXTargetDependency */,
-			);
-			name = MensaBarTests;
-			packageProductDependencies = (
-			);
-			productName = MensaBarTests;
-			productReference = 50E846AC2DEC5D60001ECD8F /* MensaBarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		506EBD612DE0B5A500A2B5A0 /* MensaBarUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 506EBD722DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarUITests" */;
-			buildPhases = (
-				506EBD5E2DE0B5A500A2B5A0 /* Sources */,
-				506EBD5F2DE0B5A500A2B5A0 /* Frameworks */,
-				506EBD602DE0B5A500A2B5A0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				506EBD642DE0B5A500A2B5A0 /* PBXTargetDependency */,
-			);
-			name = MensaBarUITests;
-			packageProductDependencies = (
-			);
-			productName = MensaBarUITests;
-			productReference = 50E846AD2DEC5D60001ECD8F /* MensaBarUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,14 +101,6 @@
 				TargetAttributes = {
 					506EBD492DE0B5A400A2B5A0 = {
 						CreatedOnToolsVersion = 16.3;
-					};
-					506EBD572DE0B5A500A2B5A0 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 506EBD492DE0B5A400A2B5A0;
-					};
-					506EBD612DE0B5A500A2B5A0 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 506EBD492DE0B5A400A2B5A0;
 					};
 				};
 			};
@@ -203,28 +122,12 @@
 			projectRoot = "";
 			targets = (
 				506EBD492DE0B5A400A2B5A0 /* MensaBar */,
-				506EBD572DE0B5A500A2B5A0 /* MensaBarTests */,
-				506EBD612DE0B5A500A2B5A0 /* MensaBarUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		506EBD482DE0B5A400A2B5A0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		506EBD562DE0B5A500A2B5A0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		506EBD602DE0B5A500A2B5A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,34 +144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		506EBD542DE0B5A500A2B5A0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		506EBD5E2DE0B5A500A2B5A0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		506EBD5A2DE0B5A500A2B5A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 506EBD492DE0B5A400A2B5A0 /* MensaBar */;
-			targetProxy = 506EBD592DE0B5A500A2B5A0 /* PBXContainerItemProxy */;
-		};
-		506EBD642DE0B5A500A2B5A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 506EBD492DE0B5A400A2B5A0 /* MensaBar */;
-			targetProxy = 506EBD632DE0B5A500A2B5A0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		506EBD6A2DE0B5A500A2B5A0 /* Debug */ = {
@@ -447,70 +323,6 @@
 			};
 			name = Release;
 		};
-		506EBD702DE0B5A500A2B5A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MensaBar";
-			};
-			name = Debug;
-		};
-		506EBD712DE0B5A500A2B5A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MensaBar";
-			};
-			name = Release;
-		};
-		506EBD732DE0B5A500A2B5A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MensaBar;
-			};
-			name = Debug;
-		};
-		506EBD742DE0B5A500A2B5A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cubexy.MensaBarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MensaBar;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -528,24 +340,6 @@
 			buildConfigurations = (
 				506EBD6D2DE0B5A500A2B5A0 /* Debug */,
 				506EBD6E2DE0B5A500A2B5A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		506EBD6F2DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				506EBD702DE0B5A500A2B5A0 /* Debug */,
-				506EBD712DE0B5A500A2B5A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		506EBD722DE0B5A500A2B5A0 /* Build configuration list for PBXNativeTarget "MensaBarUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				506EBD732DE0B5A500A2B5A0 /* Debug */,
-				506EBD742DE0B5A500A2B5A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
