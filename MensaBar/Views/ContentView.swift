@@ -39,16 +39,7 @@ struct ContentView: View {
                     }
                 }
                 Spacer()
-                Menu {
-                    Button("Auf GitHub öffnen", action: vm.openOnGithub)
-                    Divider()
-                    Button("Schließen", action: vm.exit).keyboardShortcut("q", modifiers: .command)
-                } label: {
-                    Image(systemName: "gear").padding(2)
-                }
-                .menuStyle(BorderlessButtonMenuStyle())
-                .menuIndicator(.hidden)
-                .fixedSize()
+                SettingsMenuView(openOnGithub: vm.openOnGithub, exit: vm.exit)
 
             }.padding(.horizontal)
             if menu == nil {
