@@ -33,6 +33,7 @@ struct LastUpdatedView: View {
                     .onHover(perform: { _ in
                         self.isShowingPopover = true
                     })
+                    .transition(.opacity)
                     .popover(
                         isPresented: $isShowingPopover,
                         arrowEdge: .bottom
@@ -41,12 +42,8 @@ struct LastUpdatedView: View {
                     }
             }
         }.animation(
-            .easeInOut(duration: 0.5),
-            value: loading
-        ).animation(
-            .easeInOut(duration: 0.5),
-            value: !loading && error != nil
+            .easeInOut,
+            value: loading && error == nil
         )
-
     }
 }

@@ -8,18 +8,20 @@
 import Foundation
 
 struct ErrorViewModel {
-    var errorDate: Date?
+    private var errorDate: Date?
     var errorTitle: String
     var errorMessage: String
     var errorDisplayTitle: String
     var errorDisplayMessage: String
+    var canReport: Bool = true
     
-    init(errorTitle: String, errorMessage: String, errorDisplayTitle: String, errorDisplayMessage: String, errorDate: Date?) {
+    init(errorTitle: String, errorMessage: String, errorDisplayTitle: String, errorDisplayMessage: String, errorDate: Date?, canReport: Bool = true) {
         self.errorTitle = errorTitle
         self.errorDisplayTitle = errorDisplayTitle
         self.errorMessage = errorMessage
         self.errorDisplayMessage = errorDisplayMessage
         self.errorDate = errorDate
+        self.canReport = canReport
     }
     
     private func getIssueTitle() -> String {
@@ -43,7 +45,7 @@ struct ErrorViewModel {
     }
     
     func getErrorIssueUrl() -> URL {
-        let REPO_URL = Constants.Urls.repositoryBaseUrl
+        let REPO_URL = Constants.Urls.repositoryBaseIssueUrl
         
         var urlComponents = URLComponents(
             url: REPO_URL,

@@ -23,7 +23,9 @@ struct ContentParsingFailedView: View {
                     error.errorDisplayMessage
                 )
             }
-            Link("Fehler melden", destination: error.getErrorIssueUrl())
+            if error.canReport {
+                Link("Fehler melden", destination: error.getErrorIssueUrl())
+            }
             Spacer()
         }
         

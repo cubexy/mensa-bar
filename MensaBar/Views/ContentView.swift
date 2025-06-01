@@ -25,18 +25,32 @@ struct ContentView: View {
             Text("Speiseplan (Mensa am Park)").fontWeight(.bold)
                 .padding(.horizontal)
                 .padding(.top, 10)
-            DatePicker(
-                "am",
-                selection: $date,
-                displayedComponents: [.date]
-            ).padding(.horizontal).datePickerStyle(.compact).environment(
-                \.locale,
-                Locale.init(identifier: "de")
-            ).onChange(of: date) {
-                Task {
-                    await vm.setDate(date)
+            HStack(alignment: .center) {
+                DatePicker(
+                    "am",
+                    selection: $date,
+                    displayedComponents: [.date]
+                ).datePickerStyle(.compact).environment(
+                    \.locale,
+                    Locale.init(identifier: "de")
+                ).onChange(of: date) {
+                    Task {
+                        await vm.setDate(date)
+                    }
                 }
-            }
+                Spacer()
+                Menu {
+                    Button("Auf GitHub öffnen", action: vm.openOnGithub)
+                    Divider()
+                    Button("Schließen", action: vm.exit).keyboardShortcut("q", modifiers: .command)
+                } label: {
+                    Image(systemName: "gear").padding(2)
+                }
+                .menuStyle(BorderlessButtonMenuStyle())
+                .menuIndicator(.hidden)
+                .fixedSize()
+
+            }.padding(.horizontal)
             if menu == nil {
                 // was not able to load entries
                 Spacer()
@@ -47,7 +61,9 @@ struct ContentView: View {
                         Spacer()
                     }.transition(.blurReplace)
                 } else {
-                    ContentParsingFailedView(error: error!).transition(.blurReplace)
+                    ContentParsingFailedView(error: error!).transition(
+                        .blurReplace
+                    )
                 }
                 Spacer()
             } else if menu!.menu.isEmpty {
@@ -65,7 +81,7 @@ struct ContentView: View {
                     isShowingPopover: $isShowingPopover,
                     timestamp: menu!.getTimestamp()
                 ).padding(.horizontal)
-                .transition(.blurReplace)
+                    .transition(.blurReplace)
                 Spacer()
             } else {
                 List {
@@ -76,7 +92,8 @@ struct ContentView: View {
                                 !description.isEmpty
                             {
                                 Text(description).foregroundStyle(
-                                    .secondary)
+                                    .secondary
+                                )
                             }
                             Text(item.price)
                         }

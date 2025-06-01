@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 
 @MainActor
 class MenuViewModel: ObservableObject {
@@ -13,6 +14,15 @@ class MenuViewModel: ObservableObject {
     @Published var loading: Bool = true
     @Published var error: ErrorViewModel?
     var date: Date?
+    
+    func exit() {
+        NSApplication.shared.terminate(nil)
+    }
+    
+    func openOnGithub() {
+        let BASE_URL = Constants.Urls.repositoryBaseUrl
+        NSWorkspace.shared.open(BASE_URL)
+    }
 
     /**
     Initial menu population.
@@ -48,18 +58,20 @@ class MenuViewModel: ObservableObject {
             self.error = ErrorViewModel(
                 errorTitle: "connection failed",
                 errorMessage: "could not get response from server",
-                errorDisplayTitle: "Verbindung fehlgeschlagen",
+                errorDisplayTitle: "Verbindungsfehler",
                 errorDisplayMessage:
-                    "Fehler beim Erhalten der Daten. Bitte überprüfe deine Internetverbindung.",
-                errorDate: selectedDate
+                    "Fehler beim Abrufen der Daten. Bitte überprüfe die Verbindung.",
+                errorDate: selectedDate,
+                canReport: false
             )
         } catch RecipeFetchError.invalidResponse {
             self.error = ErrorViewModel(
                 errorTitle: "invalid response",
                 errorMessage: "server returned invalid (empty) response",
-                errorDisplayTitle: "Abruf der Daten  fehlgeschlagen",
-                errorDisplayMessage: "Fehler beim Abrufen der Daten.",
-                errorDate: selectedDate
+                errorDisplayTitle: "Verbindungsfehler",
+                errorDisplayMessage: "Fehler beim Erhalten der Daten.",
+                errorDate: selectedDate,
+                canReport: false
             )
         } catch RecipeFetchError.parsingFailed(let errorDispatch, let mealData)
         {
@@ -114,17 +126,11 @@ struct MenuItemViewModel {
         self.item = item
     }
 
-    var id: Int {
-        item.id
-    }
+    var id: Int { item.id }
 
-    var name: String {
-        item.name
-    }
+    var name: String { item.name }
 
-    var description: String? {
-        item.description
-    }
+    var description: String? { item.description }
 
     var price: String {
         String(format: "%.2f €", item.price)
