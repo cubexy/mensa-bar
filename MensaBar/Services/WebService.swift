@@ -40,21 +40,21 @@ class WebService {
         if meals.size() == 0 {
             return []
         }
-        let parsedMeals = try meals.enumerated().map { (index, meal) in
+        let parsedMeals = try meals.enumerated().compactMap { (index, meal) in
             try parseMeal(meal, index)
         }
         return parsedMeals
     }
 
     static private func parseMeal(_ meal: Element, _ index: Int) throws
-        -> MenuItem
+        -> MenuItem?
     {
         // parse meal title
         let titleElement = try meal.getElementsByTag("h4")
         guard titleElement.size() > 0 else {
             throw RecipeFetchError.parsingFailed(
                 errorDispatch: ErrorDispatch.noTitle,
-                mealData: try meal.text()
+                mealData: try meal.html()
             )
         }
         let titleText: String = try titleElement.first()!.text().trim()
@@ -68,9 +68,12 @@ class WebService {
         // parse meal price
         let priceParentElement = try meal.getElementsByClass("meal-prices")
         guard priceParentElement.size() > 0 else {
+            if titleText == "Samstagsangebot" { // issue #1 - "Samstagsangebot" modal is no valid food option
+                return nil
+            }
             throw RecipeFetchError.parsingFailed(
                 errorDispatch: ErrorDispatch.noPriceParent,
-                mealData: try meal.text()
+                mealData: try meal.html()
             )
         }
 
@@ -81,7 +84,7 @@ class WebService {
         guard priceElement.size() > 0 else {
             throw RecipeFetchError.parsingFailed(
                 errorDispatch: ErrorDispatch.noPrice,
-                mealData: try meal.text()
+                mealData: try meal.html()
             )
         }
         let priceText = try priceElement.first()!.text().trim()

@@ -28,14 +28,17 @@ struct ErrorViewModel {
     
     private func getIssueBody() -> String {
         return """
-**Error code**
+**Error content**
+<!--Debug information needed to identify the error.-->
+```
 \(self.errorMessage)
+```
 
 **Menu date**
 \(getTimestamp())
 
 **Additional information**
-Add additional information here.
+<!--Add additional information here! :)-->
 """
     }
     

@@ -22,11 +22,19 @@ class MenuViewModel: ObservableObject {
         self.error = nil
         var selectedDate: Date?
         do {
-            selectedDate = self.date == nil ? try DatePickerService.getDate() : self.date
+            selectedDate =
+                self.date == nil ? try DatePickerService.getDate() : self.date
         } catch let error {
-            self.error = ErrorViewModel(errorTitle: "unknown date picking error", errorMessage: "unhandled date picking error - error: \(error.localizedDescription)", errorDisplayTitle: "Unerwarteter Fehler", errorDisplayMessage: "Ein unerwarteter Fehler ist aufgetreten.", errorDate: nil)
+            self.error = ErrorViewModel(
+                errorTitle: "unknown date picking error",
+                errorMessage:
+                    "unhandled date picking error - error: \(error.localizedDescription)",
+                errorDisplayTitle: "Unerwarteter Fehler",
+                errorDisplayMessage: "Ein unerwarteter Fehler ist aufgetreten.",
+                errorDate: nil
+            )
         }
-        
+
         do {
             let url = MensaUrlService.getMensaUrl(
                 date: selectedDate!,
@@ -37,16 +45,42 @@ class MenuViewModel: ObservableObject {
             self.menu = CafeteriaMenuViewModel(menuItems: vmItems, date: Date())
             self.date = selectedDate!
         } catch RecipeFetchError.noResponse {
-            self.error = ErrorViewModel(errorTitle: "connection failed", errorMessage: "could not get response from server", errorDisplayTitle: "Verbindung fehlgeschlagen", errorDisplayMessage: "Fehler beim Erhalten der Daten. Bitte überprüfe deine Internetverbindung.", errorDate: selectedDate)
+            self.error = ErrorViewModel(
+                errorTitle: "connection failed",
+                errorMessage: "could not get response from server",
+                errorDisplayTitle: "Verbindung fehlgeschlagen",
+                errorDisplayMessage:
+                    "Fehler beim Erhalten der Daten. Bitte überprüfe deine Internetverbindung.",
+                errorDate: selectedDate
+            )
         } catch RecipeFetchError.invalidResponse {
-            self.error = ErrorViewModel(errorTitle: "invalid response", errorMessage: "server returned invalid (empty) response", errorDisplayTitle: "Abruf der Daten  fehlgeschlagen", errorDisplayMessage: "Fehler beim Abrufen der Daten.", errorDate: selectedDate)
-        } catch RecipeFetchError.parsingFailed(let errorDispatch, let mealData) {
-            self.error = ErrorViewModel(errorTitle: errorDispatch.rawValue, errorMessage: mealData, errorDisplayTitle: "Verarbeitungsfehler", errorDisplayMessage: "Verarbeiten der Daten fehlgeschlagen.", errorDate: selectedDate)
+            self.error = ErrorViewModel(
+                errorTitle: "invalid response",
+                errorMessage: "server returned invalid (empty) response",
+                errorDisplayTitle: "Abruf der Daten  fehlgeschlagen",
+                errorDisplayMessage: "Fehler beim Abrufen der Daten.",
+                errorDate: selectedDate
+            )
+        } catch RecipeFetchError.parsingFailed(let errorDispatch, let mealData)
+        {
+            self.error = ErrorViewModel(
+                errorTitle: errorDispatch.rawValue,
+                errorMessage: mealData,
+                errorDisplayTitle: "Verarbeitungsfehler",
+                errorDisplayMessage: "Verarbeiten der Daten fehlgeschlagen.",
+                errorDate: selectedDate
+            )
         } catch let error {
-            self.error = ErrorViewModel(errorTitle: "unknown general error", errorMessage: "unhandled general error - error: \(error.localizedDescription)", errorDisplayTitle: "Unerwarteter Fehler", errorDisplayMessage: "Ein unerwarteter Fehler ist aufgetreten.", errorDate: selectedDate)
+            self.error = ErrorViewModel(
+                errorTitle: "unknown general error",
+                errorMessage:
+                    "unhandled general error - error: \(error.localizedDescription)",
+                errorDisplayTitle: "Unerwarteter Fehler",
+                errorDisplayMessage: "Ein unerwarteter Fehler ist aufgetreten.",
+                errorDate: selectedDate
+            )
         }
         self.loading = false
-
     }
 
     func setDate(_ date: Date) async {
