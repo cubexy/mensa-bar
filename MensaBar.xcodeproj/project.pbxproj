@@ -29,8 +29,8 @@
 
 /* Begin PBXFileReference section */
 		506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E846AC2DEC5D60001ECD8F /* MensaBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E846AD2DEC5D60001ECD8F /* MensaBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E846AC2DEC5D60001ECD8F /* MensaBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MensaBarTests.xctest; path = /Users/max/Documents/GitHub/MensaBar/build/Debug/MensaBar.app/Contents/PlugIns/MensaBarTests.xctest; sourceTree = "<absolute>"; };
+		50E846AD2DEC5D60001ECD8F /* MensaBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MensaBarUITests.xctest; path = "/Users/max/Documents/GitHub/MensaBar/build/Debug/MensaBarUITests-Runner.app/Contents/PlugIns/MensaBarUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,8 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */,
-				50E846AC2DEC5D60001ECD8F /* MensaBarTests.xctest */,
-				50E846AD2DEC5D60001ECD8F /* MensaBarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
