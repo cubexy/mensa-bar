@@ -13,6 +13,4 @@ MensaBar is a simple MacOS menu bar app that shows the current menu of Studenten
 
 ## Note
 
-```
-🙏 Please note that this app is technically not even in alpha. It is currently undergoing development.
-```
+If you find any bugs or have any feature requests, feel free to open an issue!
