@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LaunchAtLogin
 
 struct SettingsMenuView: View {
     var openOnGithub: () -> Void
@@ -13,9 +14,10 @@ struct SettingsMenuView: View {
     
     var body: some View {
         Menu {
-            Button("Auf GitHub öffnen", action: openOnGithub)
-            Divider()
+            LaunchAtLogin.Toggle("Bei Anmeldung öffnen")
             Button("Schließen", action: exit).keyboardShortcut("q", modifiers: .command)
+            Divider()
+            Button("GitHub", action: openOnGithub)
         } label: {
             Image(systemName: "gear")
         }

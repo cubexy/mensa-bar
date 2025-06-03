@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506CC2F02DEED91C00B1E9FE /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 506CC2EF2DEED91C00B1E9FE /* LaunchAtLogin */; };
 		506EBD9F2DE35D2100A2B5A0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506CC2F02DEED91C00B1E9FE /* LaunchAtLogin in Frameworks */,
 				506EBD9F2DE35D2100A2B5A0 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +86,7 @@
 			name = MensaBar;
 			packageProductDependencies = (
 				506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */,
+				506CC2EF2DEED91C00B1E9FE /* LaunchAtLogin */,
 			);
 			productName = MensaBar;
 			productReference = 506EBD4A2DE0B5A400A2B5A0 /* MensaBar.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				506EBD8A2DE0CDCB00A2B5A0 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				506CC2EE2DEED91C00B1E9FE /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 506EBD4B2DE0B5A400A2B5A0 /* Products */;
@@ -347,6 +351,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		506CC2EE2DEED91C00B1E9FE /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		506EBD8A2DE0CDCB00A2B5A0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -358,6 +370,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		506CC2EF2DEED91C00B1E9FE /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 506CC2EE2DEED91C00B1E9FE /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
 		506EBD9E2DE35D2100A2B5A0 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 506EBD8A2DE0CDCB00A2B5A0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
