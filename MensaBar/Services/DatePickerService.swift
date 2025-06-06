@@ -8,7 +8,7 @@
 import Foundation
 
 class DatePickerService {
-    static func getDate() throws -> Date {
+    static func getDate() -> Date {
         let NEXT_DAY_TRIGGER_TIME = Variables.Options.nextDayTriggerTime
 
         let calendar = Calendar.current

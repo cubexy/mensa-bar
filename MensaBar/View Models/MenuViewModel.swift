@@ -5,8 +5,8 @@
 //  Created by Max Niclas Wächtler on 25.05.25.
 //
 
-import Foundation
 import AppKit
+import Foundation
 
 @MainActor
 class MenuViewModel: ObservableObject {
@@ -14,11 +14,11 @@ class MenuViewModel: ObservableObject {
     @Published var loading: Bool = true
     @Published var error: ErrorViewModel?
     var date: Date?
-    
+
     func exit() {
         NSApplication.shared.terminate(nil)
     }
-    
+
     func openOnGithub() {
         let BASE_URL = Constants.Urls.repositoryBaseUrl
         NSWorkspace.shared.open(BASE_URL)
@@ -30,20 +30,8 @@ class MenuViewModel: ObservableObject {
     func populateMenu() async {
         self.loading = true
         self.error = nil
-        var selectedDate: Date?
-        do {
-            selectedDate =
-                self.date == nil ? try DatePickerService.getDate() : self.date
-        } catch let error {
-            self.error = ErrorViewModel(
-                errorTitle: "unknown date picking error",
-                errorMessage:
-                    "unhandled date picking error - error: \(error.localizedDescription)",
-                errorDisplayTitle: "Unerwarteter Fehler",
-                errorDisplayMessage: "Ein unerwarteter Fehler ist aufgetreten.",
-                errorDate: nil
-            )
-        }
+        let selectedDate =
+            self.date == nil ? DatePickerService.getDate() : self.date
 
         do {
             let url = MensaUrlService.getMensaUrl(
