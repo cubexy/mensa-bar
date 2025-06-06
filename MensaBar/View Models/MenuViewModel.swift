@@ -88,11 +88,25 @@ class MenuViewModel: ObservableObject {
         self.menu = nil
         await self.populateMenu()
     }
+    
+    func getDate() -> Date {
+        if self.date == nil || self.menu == nil {
+            return DatePickerService.getDate()
+        }
+        
+        let wasUpdatedRecently = Date().timeIntervalSince(self.menu!.date) < Variables.Options.recentlyUpdatedTriggerTime
+        
+        if !wasUpdatedRecently {
+            return DatePickerService.getDate()
+        }
+        
+        return self.date!
+    }
 }
 
 struct CafeteriaMenuViewModel {
     var menu: [MenuItemViewModel]
-    private var date: Date
+    var date: Date
     var loading: Bool = true
 
     init(menuItems: [MenuItemViewModel], date: Date) {
@@ -103,7 +117,8 @@ struct CafeteriaMenuViewModel {
     func getTimestamp() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm"
-        return dateFormatter.string(from: self.date)
+        let formattedDate = dateFormatter.string(from: self.date)
+        return "Zuletzt aktualisiert: \(formattedDate)"
     }
 }
 

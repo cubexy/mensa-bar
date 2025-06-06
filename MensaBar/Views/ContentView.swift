@@ -10,11 +10,12 @@ import SwiftUI
 struct ContentView: View {
 
     @StateObject private var vm: MenuViewModel
-    @State private var date = Date.now
+    @State private var date: Date
     @State private var isShowingPopover = false
 
     init(vm: MenuViewModel) {
         self._vm = StateObject(wrappedValue: vm)
+        self._date = .init(initialValue: vm.getDate())
     }
 
     var body: some View {

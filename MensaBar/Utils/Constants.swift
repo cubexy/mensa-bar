@@ -39,6 +39,7 @@ struct Constants {
 struct Variables {
     struct Options {
         static var nextDayTriggerTime: TimeInterval = 72000  // 20 * 60 * 60 == 20:00
+        static var recentlyUpdatedTriggerTime: TimeInterval = 300
     }
     static var urlVariables: [String: [UrlVariableOption]] = [
         "location": [

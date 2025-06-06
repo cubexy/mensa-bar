@@ -17,7 +17,7 @@ struct LastUpdatedView: View {
     var body: some View {
         HStack {
             Text(
-                "Zuletzt aktualisiert: \(timestamp)"
+                timestamp
             )
             
             .foregroundStyle(.tertiary)
