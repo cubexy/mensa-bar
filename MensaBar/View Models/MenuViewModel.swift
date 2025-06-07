@@ -32,6 +32,7 @@ class MenuViewModel: ObservableObject {
         self.error = nil
         let selectedDate = self.getDate()
         do {
+
             let url = MensaUrlService.getMensaUrl(
                 date: selectedDate,
                 options: [.init(variable: "location", option: "106")]
@@ -40,7 +41,9 @@ class MenuViewModel: ObservableObject {
             let vmItems = menu.map { MenuItemViewModel($0) }
             self.menu = CafeteriaMenuViewModel(menuItems: vmItems, date: Date())
             self.menuDate = selectedDate
+
         } catch RecipeFetchError.noResponse {
+
             self.error = ErrorViewModel(
                 errorTitle: "connection failed",
                 errorMessage: "could not get response from server",
@@ -50,7 +53,9 @@ class MenuViewModel: ObservableObject {
                 errorDate: selectedDate,
                 canReport: false
             )
+
         } catch RecipeFetchError.invalidResponse {
+
             self.error = ErrorViewModel(
                 errorTitle: "invalid response",
                 errorMessage: "server returned invalid (empty) response",
@@ -59,8 +64,10 @@ class MenuViewModel: ObservableObject {
                 errorDate: selectedDate,
                 canReport: false
             )
+
         } catch RecipeFetchError.parsingFailed(let errorDispatch, let mealData)
         {
+
             self.error = ErrorViewModel(
                 errorTitle: errorDispatch.rawValue,
                 errorMessage: mealData,
@@ -68,7 +75,9 @@ class MenuViewModel: ObservableObject {
                 errorDisplayMessage: "Verarbeiten der Daten fehlgeschlagen.",
                 errorDate: selectedDate
             )
+
         } catch let error {
+
             self.error = ErrorViewModel(
                 errorTitle: "unknown general error",
                 errorMessage:
@@ -77,7 +86,9 @@ class MenuViewModel: ObservableObject {
                 errorDisplayMessage: "Ein unerwarteter Fehler ist aufgetreten.",
                 errorDate: selectedDate
             )
+
         }
+
         self.loading = false
     }
 
@@ -88,36 +99,44 @@ class MenuViewModel: ObservableObject {
     }
 
     private func getDate() -> Date {
-        if self.menuDate == nil || self.menu == nil {
+        if self.menuDate == nil {
+            // no menudate was set yet
             return DatePickerService.getDate()
+        }
+
+        if self.menu == nil {
+            // menudate was manually set and menu was reset
+            return self.menuDate!
         }
 
         let wasUpdatedRecently =
-            Date().timeIntervalSince(self.menu!.date)
+            Date().timeIntervalSince(self.menu!.updatedAtTimestamp)
             < Variables.Options.recentlyUpdatedTriggerTime
 
         if !wasUpdatedRecently {
+            // menu is being updated, was last updated some time ago
             return DatePickerService.getDate()
         }
 
+        // menu is being updated, was updated recently
         return self.menuDate!
     }
 }
 
 struct CafeteriaMenuViewModel {
     var menu: [MenuItemViewModel]
-    var date: Date
+    var updatedAtTimestamp: Date
     var loading: Bool = true
 
     init(menuItems: [MenuItemViewModel], date: Date) {
         self.menu = menuItems
-        self.date = date
+        self.updatedAtTimestamp = date
     }
 
     func getTimestamp() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm"
-        let formattedDate = dateFormatter.string(from: self.date)
+        let formattedDate = dateFormatter.string(from: self.updatedAtTimestamp)
         return "Zuletzt aktualisiert: \(formattedDate)"
     }
 }
