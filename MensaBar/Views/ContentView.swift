@@ -10,12 +10,10 @@ import SwiftUI
 struct ContentView: View {
 
     @StateObject private var vm: MenuViewModel
-    @State private var date: Date
     @State private var isShowingPopover = false
 
     init(vm: MenuViewModel) {
         self._vm = StateObject(wrappedValue: vm)
-        self._date = .init(initialValue: vm.getDate())
     }
 
     var body: some View {
@@ -27,21 +25,22 @@ struct ContentView: View {
                 .padding(.horizontal)
                 .padding(.top, 10)
             HStack(alignment: .center) {
-                DatePicker(
-                    "am",
-                    selection: $date,
-                    displayedComponents: [.date]
-                ).datePickerStyle(.compact).environment(
-                    \.locale,
-                    Locale.init(identifier: "de")
-                ).onChange(of: date) {
-                    Task {
-                        await vm.setDate(date)
-                    }
+                if vm.menuDate != nil {
+                    DatePicker(
+                        "am",
+                        selection: Binding(
+                            get: { vm.menuDate! },
+                            set: { date in Task { await vm.setDate(date) } }
+                        ),
+                        displayedComponents: [.date]
+                    ).datePickerStyle(.compact).environment(
+                        \.locale,
+                        Locale.init(identifier: "de")
+                    )
                 }
                 Spacer()
                 SettingsMenuView(openOnGithub: vm.openOnGithub, exit: vm.exit)
-
+                    .padding(.vertical, 4)
             }.padding(.horizontal)
             if menu == nil {
                 // was not able to load entries

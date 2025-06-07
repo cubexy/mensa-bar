@@ -13,7 +13,7 @@ class MenuViewModel: ObservableObject {
     @Published var menu: CafeteriaMenuViewModel?
     @Published var loading: Bool = true
     @Published var error: ErrorViewModel?
-    var date: Date?
+    @Published var menuDate: Date?
 
     func exit() {
         NSApplication.shared.terminate(nil)
@@ -30,18 +30,16 @@ class MenuViewModel: ObservableObject {
     func populateMenu() async {
         self.loading = true
         self.error = nil
-        let selectedDate =
-            self.date == nil ? DatePickerService.getDate() : self.date
-
+        let selectedDate = self.getDate()
         do {
             let url = MensaUrlService.getMensaUrl(
-                date: selectedDate!,
+                date: selectedDate,
                 options: [.init(variable: "location", option: "106")]
             )
             let menu = try await WebService.getMensaMeals(url: url)
             let vmItems = menu.map { MenuItemViewModel($0) }
             self.menu = CafeteriaMenuViewModel(menuItems: vmItems, date: Date())
-            self.date = selectedDate!
+            self.menuDate = selectedDate
         } catch RecipeFetchError.noResponse {
             self.error = ErrorViewModel(
                 errorTitle: "connection failed",
@@ -84,23 +82,25 @@ class MenuViewModel: ObservableObject {
     }
 
     func setDate(_ date: Date) async {
-        self.date = date
+        self.menuDate = date
         self.menu = nil
         await self.populateMenu()
     }
-    
-    func getDate() -> Date {
-        if self.date == nil || self.menu == nil {
+
+    private func getDate() -> Date {
+        if self.menuDate == nil || self.menu == nil {
             return DatePickerService.getDate()
         }
-        
-        let wasUpdatedRecently = Date().timeIntervalSince(self.menu!.date) < Variables.Options.recentlyUpdatedTriggerTime
-        
+
+        let wasUpdatedRecently =
+            Date().timeIntervalSince(self.menu!.date)
+            < Variables.Options.recentlyUpdatedTriggerTime
+
         if !wasUpdatedRecently {
             return DatePickerService.getDate()
         }
-        
-        return self.date!
+
+        return self.menuDate!
     }
 }
 
