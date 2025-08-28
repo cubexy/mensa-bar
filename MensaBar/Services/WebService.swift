@@ -18,7 +18,7 @@ enum ErrorDispatch: String {
     case noMenuItems = "could not find menu items with class type--meal"
     case noTitle = "could not find title h4 element"
     case noPriceParent =
-        "could not find price parent element with class meal-prices"
+        "could not find parent main element"
     case noPrice = "could not find student price child span element"
     case unknown = "unhandled error case"
 }
@@ -36,7 +36,14 @@ class WebService {
             throw RecipeFetchError.invalidResponse
         }
         let document: Document = try SwiftSoup.parse(webData)
-        let meals = try document.getElementsByClass("type--meal")
+        
+        // main id = page-content
+        guard let mainElement = try document.getElementById("page-content") else {
+            throw RecipeFetchError.invalidResponse
+        }
+        
+        let meals = try mainElement.select("main#page-content > div.grid-container > div:first-child > div.cell:first-child > div:nth-last-child(2) > div:contains(€)");
+        
         if meals.size() == 0 {
             return []
         }
@@ -60,13 +67,15 @@ class WebService {
         let titleText: String = try titleElement.first()!.text().trim()
 
         // parse meal description
-        let descriptionElement = try meal.getElementsByClass("meal-components")
+        let descriptionElement = try meal.select("h4 + div")
+        
         let descriptionText = try descriptionElement.first(where: {
-            try !$0.text().trim().isEmpty
+            try $0.children().size() == 0 && !$0.text().trim().isEmpty
         })?.text().trim()
 
         // parse meal price
-        let priceParentElement = try meal.getElementsByClass("meal-prices")
+        let priceParentElement = try meal.select("div > span[title=Studierende]")
+        
         guard priceParentElement.size() > 0 else {
             if titleText == "Samstagsangebot" { // issue #1 - "Samstagsangebot" modal is no valid food option
                 return nil
