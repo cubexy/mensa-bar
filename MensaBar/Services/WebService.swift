@@ -42,7 +42,7 @@ class WebService {
             throw RecipeFetchError.invalidResponse
         }
         
-        let meals = try mainElement.select("main#page-content > div.grid-container > div:first-child > div.cell:first-child > div:nth-last-child(2) > div:contains(€)");
+        let meals = try mainElement.select("main#page-content > div.grid-container > div:first-child > div.cell:contains(€) > div:nth-last-child(2) > div:contains(€)");
         
         if meals.size() == 0 {
             return []
@@ -74,7 +74,7 @@ class WebService {
         })?.text().trim()
 
         // parse meal price
-        let priceParentElement = try meal.select("div > span[title=Studierende]")
+        let priceParentElement = try meal.select("div > div:contains(€):nth-of-type(1)")
         
         guard priceParentElement.size() > 0 else {
             if titleText == "Samstagsangebot" { // issue #1 - "Samstagsangebot" modal is no valid food option
@@ -87,16 +87,8 @@ class WebService {
         }
 
         // we will only fetch the student's price :) if other prices are needed please open an issue on GitHub!
-        let priceElement = try priceParentElement.get(0).getElementsByTag(
-            "span"
-        )
-        guard priceElement.size() > 0 else {
-            throw RecipeFetchError.parsingFailed(
-                errorDispatch: ErrorDispatch.noPrice,
-                mealData: try meal.html()
-            )
-        }
-        let priceText = try priceElement.first()!.text().trim()
+        let priceElement = priceParentElement.get(0)
+        let priceText = try priceElement.text().trim()
             .replacingOccurrences(of: ",", with: ".").replacingOccurrences(
                 of: " €",
                 with: ""
