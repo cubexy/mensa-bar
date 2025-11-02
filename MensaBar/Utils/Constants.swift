@@ -43,20 +43,20 @@ struct Variables {
     }
     static var urlVariables: [String: [UrlVariableOption]] = [
         "location": [
-            UrlVariableOption(id: "106", displayName: "Mensa am Park"),
-            UrlVariableOption(id: "111", displayName: "Mensa Peterssteinweg"),
-            UrlVariableOption(id: "115", displayName: "Mensa am Elsterbecken"),
-            UrlVariableOption(id: "118", displayName: "Mensa Academica"),
+            UrlVariableOption(id: "106", displayName: "am Park"),
+            UrlVariableOption(id: "111", displayName: "Peterssteinweg"),
+            UrlVariableOption(id: "115", displayName: "am Elsterbecken"),
+            UrlVariableOption(id: "118", displayName: "Academica"),
             UrlVariableOption(
                 id: "127",
-                displayName: "Mensa am Botanischen Garten"
+                displayName: "am Bot. Garten"
             ),
-            UrlVariableOption(id: "140", displayName: "Mensa Schönauer Straße"),
-            UrlVariableOption(id: "153", displayName: "Cafeteria Dittrichring"),
-            UrlVariableOption(id: "162", displayName: "Mensa am Medizincampus"),
+            UrlVariableOption(id: "140", displayName: "Schönauer Straße"),
+            UrlVariableOption(id: "153", displayName: "Dittrichring"),
+            UrlVariableOption(id: "162", displayName: "am Medizincampus"),
             UrlVariableOption(
                 id: "170",
-                displayName: "Mensa An den Tierkliniken"
+                displayName: "an den Tierkliniken"
             ),
         ]
     ]

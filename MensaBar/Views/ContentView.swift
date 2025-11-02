@@ -21,9 +21,11 @@ struct ContentView: View {
         let loading = vm.loading
         let error = vm.error
         VStack(alignment: .leading) {
-            Text("Speiseplan (Mensa am Park)").fontWeight(.bold)
-                .padding(.horizontal)
-                .padding(.top, 10)
+            Picker("Mensa",selection: $vm.cafeteriaSelection) {
+                ForEach(vm.getCafeterias(), id: \.id) { item in
+                    Text(item.displayName).tag(String(item.id))
+                }
+            }.padding(.horizontal).padding(.top, 12).pickerStyle(.menu)
             HStack(alignment: .center) {
                 if vm.menuDate != nil {
                     DatePicker(
