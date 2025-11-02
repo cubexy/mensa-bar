@@ -14,14 +14,38 @@ class MenuViewModel: ObservableObject {
     @Published var loading: Bool = true
     @Published var error: ErrorViewModel?
     @Published var menuDate: Date?
+    @Published var cafeteriaId: String?
+    @Published var cafeteriaSelection: String = "106"
 
+    /**
+    Exit the app.
+     */
     func exit() {
         NSApplication.shared.terminate(nil)
     }
 
+    /**
+    Display the GitHub page of the project.
+     */
     func openOnGithub() {
         let BASE_URL = Constants.Urls.repositoryBaseUrl
         NSWorkspace.shared.open(BASE_URL)
+    }
+    
+    /**
+    Fetch all displayable cafeterias. (TODO: Only show cafeterias that have food during the certain day.)
+     */
+    func getCafeterias() -> [UrlVariableOption] {
+        return Variables.urlVariables["location"] ?? []
+    }
+    
+    /**
+    Change the cafeteria.
+     */
+    func setCafeteria(_ cafeteriaId: String) async {
+        self.cafeteriaSelection = cafeteriaId
+        self.menu = nil
+        await self.populateMenu()
     }
 
     /**
@@ -35,7 +59,7 @@ class MenuViewModel: ObservableObject {
 
             let url = MensaUrlService.getMensaUrl(
                 date: selectedDate,
-                options: [.init(variable: "location", option: "106")]
+                options: [.init(variable: "location", option: cafeteriaSelection)]
             )
             let menu = try await WebService.getMensaMeals(url: url)
             let vmItems = menu.map { MenuItemViewModel($0) }

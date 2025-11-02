@@ -21,9 +21,16 @@ struct ContentView: View {
         let loading = vm.loading
         let error = vm.error
         VStack(alignment: .leading) {
-            Text("Speiseplan (Mensa am Park)").fontWeight(.bold)
-                .padding(.horizontal)
-                .padding(.top, 10)
+            if vm.menuDate != nil {
+                Picker("Mensa",selection: Binding(
+                    get: { vm.cafeteriaSelection },
+                    set: { cafeteria in Task { await vm.setCafeteria(cafeteria) } }
+                )) {
+                    ForEach(vm.getCafeterias(), id: \.id) { item in
+                        Text(item.displayName).tag(String(item.id))
+                    }
+                }.padding(.horizontal).padding(.top, 12).pickerStyle(.menu)
+            }
             HStack(alignment: .center) {
                 if vm.menuDate != nil {
                     DatePicker(
@@ -41,6 +48,7 @@ struct ContentView: View {
                 Spacer()
                 SettingsMenuView(openOnGithub: vm.openOnGithub, exit: vm.exit)
                     .padding(.vertical, 4)
+                    .padding(.top, vm.menuDate == nil ? 18 : 0)
             }.padding(.horizontal)
             if menu == nil {
                 // was not able to load entries
