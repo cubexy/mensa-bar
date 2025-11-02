@@ -21,7 +21,10 @@ struct ContentView: View {
         let loading = vm.loading
         let error = vm.error
         VStack(alignment: .leading) {
-            Picker("Mensa",selection: $vm.cafeteriaSelection) {
+            Picker("Mensa",selection: Binding(
+                get: { vm.cafeteriaSelection },
+                set: { cafeteria in Task { await vm.setCafeteria(cafeteria) } }
+            )) {
                 ForEach(vm.getCafeterias(), id: \.id) { item in
                     Text(item.displayName).tag(String(item.id))
                 }

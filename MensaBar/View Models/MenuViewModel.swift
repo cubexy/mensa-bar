@@ -38,6 +38,15 @@ class MenuViewModel: ObservableObject {
     func getCafeterias() -> [UrlVariableOption] {
         return Variables.urlVariables["location"] ?? []
     }
+    
+    /**
+    Change the cafeteria.
+     */
+    func setCafeteria(_ cafeteriaId: String) async {
+        self.cafeteriaSelection = cafeteriaId
+        self.menu = nil
+        await self.populateMenu()
+    }
 
     /**
     Initial menu population.
@@ -50,7 +59,7 @@ class MenuViewModel: ObservableObject {
 
             let url = MensaUrlService.getMensaUrl(
                 date: selectedDate,
-                options: [.init(variable: "location", option: "106")]
+                options: [.init(variable: "location", option: cafeteriaSelection)]
             )
             let menu = try await WebService.getMensaMeals(url: url)
             let vmItems = menu.map { MenuItemViewModel($0) }
