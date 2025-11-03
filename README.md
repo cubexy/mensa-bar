@@ -3,7 +3,6 @@
 # mensa-bar
 
 <img width="319" height="349" alt="App view with basic menu" src="https://github.com/user-attachments/assets/38ea6c49-3bf6-4021-aafd-b32a5f15d0f0" />
-<img width="309" height="308" alt="App view with cafeteria selection" src="https://github.com/user-attachments/assets/9f2f2733-9c26-49e6-ba3d-a464c196443d" />
 
 MensaBar is a simple MacOS menu bar app that shows the current menu of Studentenwerk Leipzig cafeterias.
 
