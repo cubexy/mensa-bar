@@ -2,14 +2,16 @@
 
 # mensa-bar
 
-<img width="376" alt="Default app view with menu" src="https://github.com/user-attachments/assets/66a1e4fa-ab97-4857-8f0d-057ce3f649b6" />
+<img width="319" height="349" alt="App view with basic menu" src="https://github.com/user-attachments/assets/38ea6c49-3bf6-4021-aafd-b32a5f15d0f0" />
+<img width="309" height="308" alt="App view with cafeteria selection" src="https://github.com/user-attachments/assets/9f2f2733-9c26-49e6-ba3d-a464c196443d" />
 
 MensaBar is a simple MacOS menu bar app that shows the current menu of Studentenwerk Leipzig cafeterias.
 
-## Showcase
-
-<img width="325" alt="App view without menu" src="https://github.com/user-attachments/assets/4f984797-ff74-4bb4-9724-538193a6e35a" />
-<img width="368" alt="App view with date selection" src="https://github.com/user-attachments/assets/a4d2c853-21ad-4e35-8e68-fabc8ed8918e" />
+## Features
+- **🍔 Meal view**: See prices and ingridients for every meal
+- **🔎 Cafeteria selection**: View all available meals for every cafeteria operated by STWL
+- **📆 Date selection**: View past and future cafeteria menus
+- **🛫 Autostart**: Run on startup with one click
 
 ## Note
 
