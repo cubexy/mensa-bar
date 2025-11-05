@@ -23,6 +23,7 @@ struct SettingsMenuView: View {
         }
         .menuStyle(BorderlessButtonMenuStyle())
         .menuIndicator(.hidden)
+        .frame(width: 16, height: 16)
         .fixedSize()
     }
 }
