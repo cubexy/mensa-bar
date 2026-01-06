@@ -12,6 +12,10 @@ MensaBar is a simple MacOS menu bar app that shows the current menu of Studenten
 - **📆 Date selection**: View past and future cafeteria menus
 - **🛫 Autostart**: Run on startup with one click
 
+## Running the app
+
+If you want to test the app, please download the [latest release](https://github.com/cubexy/mensa-bar/releases/latest) and extract the .app file from the `MensaBar.zip` archive. After running the app, you will get an error because the app is unsigned (I am not currently enrolled in the Developer Program, therefore I cannot sign apps). To fix this, follow the guide from Apple Support [here](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac).
+
 ## Note
 
 If you find any bugs or have any feature requests, feel free to open an issue!
