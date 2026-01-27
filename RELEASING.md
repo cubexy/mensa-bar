@@ -16,8 +16,8 @@ Now go to the Git releases page and create a release from the tag.
 
 ## Adding the relevant binaries
 
-The last step is adding the built `.app` file to the release. (_Note that this step is written specifically for Xcode - if you use any other tools to develop, you may need to do this differently._)
+The last step is adding the built `.app` file to the release. (_Note that this step is written specifically for Xcode / MacOS - if you use any other tools to develop, you may need to do this differently._)
 
-1. Go into the "Products" folder and delete the currently saved binary.
+1. Go into the "Products" folder in Xcode, right click the "MensaBar" product, click "Open in Finder" and delete the currently saved binary.
 2. Re-start a build process. The binary will be recreated.
 3. Upload the binary to the release.
