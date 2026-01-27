@@ -179,6 +179,7 @@ struct MenuItemViewModel {
     var description: String? { item.description }
 
     var price: String {
-        String(format: "%.2f €", item.price)
+        item.price == nil ? "??? €" :
+        String(format: "%.2f €", item.price!)
     }
 }

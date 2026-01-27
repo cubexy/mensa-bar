@@ -42,7 +42,7 @@ class WebService {
             throw RecipeFetchError.invalidResponse
         }
         
-        let meals = try mainElement.select("main#page-content > div.grid-container > div:first-child > div.cell:contains(€) > div:nth-last-child(2) > div:contains(€)");
+        let meals = try mainElement.select("main#page-content > div.grid-container > div:first-child > div.cell:contains(€) > div:nth-last-child(2) > div:contains(Allergene)");
         
         if meals.size() == 0 {
             return []
@@ -80,10 +80,7 @@ class WebService {
             if titleText == "Samstagsangebot" { // issue #1 - "Samstagsangebot" modal is no valid food option
                 return nil
             }
-            throw RecipeFetchError.parsingFailed(
-                errorDispatch: ErrorDispatch.noPriceParent,
-                mealData: try meal.html()
-            )
+            return MenuItem(id: index, name: titleText, description: descriptionText, price: nil)
         }
 
         // we will only fetch the student's price :) if other prices are needed please open an issue on GitHub!

@@ -11,5 +11,5 @@ struct MenuItem {
     let id: Int
     let name: String
     let description: String?
-    let price: Double
+    let price: Double?
 }
